@@ -20,7 +20,9 @@ locals {
 }
 
 module "kong" {
-  source        = "/Users/andy/DEV/Philips/terraform/terraform-cloudfoundry-kong"
+  source  = "philips-labs/kong/cloudfoundry"
+  version = "2.3.3"
+
   cf_org_name   = "hsdp-demo-org"
   cf_space_name = "test"
   name_postfix  = "multispace"
