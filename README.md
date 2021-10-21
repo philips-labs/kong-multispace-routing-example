@@ -55,6 +55,7 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | <a name="input_cf_org_name"></a> [cf\_org\_name](#input\_cf\_org\_name) | n/a | `string` | n/a | yes |
 | <a name="input_cf_password"></a> [cf\_password](#input\_cf\_password) | n/a | `string` | n/a | yes |
+| <a name="input_cf_space_name"></a> [cf\_space\_name](#input\_cf\_space\_name) | n/a | `string` | n/a | yes |
 | <a name="input_cf_user"></a> [cf\_user](#input\_cf\_user) | n/a | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | n/a | yes |
 
