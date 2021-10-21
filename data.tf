@@ -1,9 +1,3 @@
-data "cloudfoundry_space" "spaces" {
-  count = local.total_teams
-  name  = "space${count.index}"
-  org   = data.cloudfoundry_org.org.id
-}
-
 data "cloudfoundry_org" "org" {
   name = var.cf_org_name
 }
