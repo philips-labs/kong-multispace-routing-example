@@ -1,5 +1,5 @@
 locals {
-  total_teams = 2
+  total_teams = 4
 
   services = {
     for n in range(0, local.total_teams) :
