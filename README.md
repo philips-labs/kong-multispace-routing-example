@@ -5,7 +5,7 @@ available from a single host through a path prefix. It demonstrates
 how network policies can be used to accomodate traffic across 
 spaces and potentially even across org boundaries
 
-# usage
+## usage
 
 Provide the required variables and then run:
 
@@ -14,6 +14,9 @@ terraform init
 terraform apply
 ```
 
-# License
+## License
 
 License is MIT
+
+<!--- BEGIN_TF_DOCS --->
+<!--- END_TF_DOCS --->
