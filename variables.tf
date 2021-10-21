@@ -10,6 +10,10 @@ variable "cf_org_name" {
   type = string
 }
 
+variable "cf_space_name" {
+  type = string
+}
+
 variable "region" {
   type = string
 }

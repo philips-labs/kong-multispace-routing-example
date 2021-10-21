@@ -23,8 +23,8 @@ module "kong" {
   source  = "philips-labs/kong/cloudfoundry"
   version = "2.3.3"
 
-  cf_org_name   = "hsdp-demo-org"
-  cf_space_name = "test"
+  cf_org_name   = var.cf_org_name
+  cf_space_name = var.cf_space_name
   name_postfix  = "multispace"
   strategy      = "blue-green"
 
