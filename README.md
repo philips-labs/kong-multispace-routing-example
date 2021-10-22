@@ -1,4 +1,4 @@
-# kong-multisplace-route-example
+# kong-multispace-route-example
 
 This module deploys apps in different spaces while making them
 available from a single host through a path prefix. It demonstrates
