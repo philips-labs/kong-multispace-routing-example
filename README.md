@@ -72,6 +72,8 @@ No requirements.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_api_gateway"></a> [api\_gateway](#output\_api\_gateway) | n/a |
 
 <!--- END_TF_DOCS --->
