@@ -5,6 +5,16 @@ available from a single host through a path prefix. It demonstrates
 how network policies can be used to accomodate traffic across 
 spaces and potentially even across org boundaries
 
+## how it works
+
+Based on the teams count (`var.teams`) the module does the following:
+
+- Creates `n` spaces
+- Deploys a test app in each space
+- Deploys a Kong API gateway
+- Configures the API gateway to forward `/teamN` path to space `N` hsoted test app
+- Sets up network policies for cross space container-to-container traffic 
+
 ## usage
 
 Provide the required variables and then run:
