@@ -20,5 +20,5 @@ variable "region" {
 
 variable "teams" {
   type    = number
-  default = 1
+  default = 4
 }
