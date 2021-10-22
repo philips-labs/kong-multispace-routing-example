@@ -3,7 +3,7 @@ locals {
     for n in range(0, var.teams) :
     n => {
       "name"  = "space${n}",
-      "url"   = "http://multispace-team${n}.apps.internal:8080"
+      "url"   = "http://${random_pet.deploy.id}-team${n}.apps.internal:8080"
       "route" = "/team${n}"
     }
   }
@@ -17,13 +17,17 @@ locals {
   declarative_config_string = jsonencode(yamldecode(local.config))
 }
 
+resource "random_pet" "deploy" {
+  separator = "-"
+}
+
 module "kong" {
   source  = "philips-labs/kong/cloudfoundry"
   version = "2.3.3"
 
   cf_org_name   = var.cf_org_name
   cf_space_name = var.cf_space_name
-  name_postfix  = "multispace"
+  name_postfix  = random_pet.deploy.id
   strategy      = "blue-green"
 
   kong_declarative_config_string = local.declarative_config_string
@@ -32,7 +36,7 @@ module "kong" {
 resource "cloudfoundry_space" "spaces" {
   count = var.teams
 
-  name = "multispace-team${count.index}"
+  name = "${random_pet.deploy.id}-team${count.index}"
   org  = data.cloudfoundry_org.org.id
 }
 
@@ -46,7 +50,7 @@ resource "cloudfoundry_app" "teams" {
   count = var.teams
 
   space = cloudfoundry_space.spaces[count.index].id
-  name  = "team${count.index}"
+  name  = "go-hello-world"
 
   docker_image = "loafoe/go-hello-world:latest"
   memory       = 64
@@ -62,7 +66,7 @@ resource "cloudfoundry_route" "internal" {
 
   space    = cloudfoundry_space.spaces[count.index].id
   domain   = data.cloudfoundry_domain.internal.id
-  hostname = "multispace-team${count.index}"
+  hostname = "${random_pet.deploy.id}-team${count.index}"
 
   depends_on = [cloudfoundry_space_users.users]
 }
