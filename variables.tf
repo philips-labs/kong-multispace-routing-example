@@ -17,3 +17,8 @@ variable "cf_space_name" {
 variable "region" {
   type = string
 }
+
+variable "teams" {
+  type    = number
+  default = 1
+}

@@ -1,8 +1,6 @@
 locals {
-  total_teams = 4
-
   services = {
-    for n in range(0, local.total_teams) :
+    for n in range(0, var.teams) :
     n => {
       "name"  = "space${n}",
       "url"   = "http://multispace-team${n}.apps.internal:8080"
@@ -32,20 +30,20 @@ module "kong" {
 }
 
 resource "cloudfoundry_space" "spaces" {
-  count = local.total_teams
+  count = var.teams
 
   name = "multispace-team${count.index}"
   org  = data.cloudfoundry_org.org.id
 }
 
 resource "cloudfoundry_space_users" "users" {
-  count      = local.total_teams
+  count      = var.teams
   space      = cloudfoundry_space.spaces[count.index].id
   developers = [var.cf_user]
 }
 
 resource "cloudfoundry_app" "teams" {
-  count = local.total_teams
+  count = var.teams
 
   space = cloudfoundry_space.spaces[count.index].id
   name  = "team${count.index}"
@@ -60,7 +58,7 @@ resource "cloudfoundry_app" "teams" {
 }
 
 resource "cloudfoundry_route" "internal" {
-  count = local.total_teams
+  count = var.teams
 
   space    = cloudfoundry_space.spaces[count.index].id
   domain   = data.cloudfoundry_domain.internal.id
@@ -71,8 +69,7 @@ resource "cloudfoundry_route" "internal" {
 
 
 resource "cloudfoundry_network_policy" "policies" {
-  count = local.total_teams
-
+  count = var.teams
 
   policy {
     source_app      = module.kong.kong_app_id
