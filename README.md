@@ -68,7 +68,7 @@ No requirements.
 | <a name="input_cf_space_name"></a> [cf\_space\_name](#input\_cf\_space\_name) | n/a | `string` | n/a | yes |
 | <a name="input_cf_user"></a> [cf\_user](#input\_cf\_user) | n/a | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | n/a | yes |
-| <a name="input_teams"></a> [teams](#input\_teams) | n/a | `number` | `1` | no |
+| <a name="input_teams"></a> [teams](#input\_teams) | n/a | `number` | `4` | no |
 
 ## Outputs
 
