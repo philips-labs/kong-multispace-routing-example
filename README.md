@@ -12,7 +12,7 @@ Based on the teams count (`var.teams`) the module does the following:
 - Creates `n` spaces
 - Deploys a test app in each space
 - Deploys a Kong API gateway
-- Configures the API gateway to forward `/teamN` path to space `N` hsoted test app
+- Configures the API gateway to forward `/teamN` path to space `N` hosted test app
 - Sets up network policies for cross space container-to-container traffic 
 
 ## usage
