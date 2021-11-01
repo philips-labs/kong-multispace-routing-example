@@ -38,7 +38,7 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_cloudfoundry"></a> [cloudfoundry](#provider\_cloudfoundry) | 0.14.2 |
-| <a name="provider_hsdp"></a> [hsdp](#provider\_hsdp) | 0.25.1 |
+| <a name="provider_hsdp"></a> [hsdp](#provider\_hsdp) | 0.26.3 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.1.0 |
 
 ## Modules
