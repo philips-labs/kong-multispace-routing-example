@@ -35,3 +35,8 @@ plugins:
 %{ for plugin in plugins ~}
 - name: ${plugin}
 %{ endfor ~}
+#- name: ip-restriction
+#  route: /
+#  config: 
+#    allow:
+#    - 143.1.0.0/24
