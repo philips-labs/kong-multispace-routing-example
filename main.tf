@@ -23,7 +23,7 @@ resource "random_pet" "deploy" {
 
 module "kong" {
   source  = "philips-labs/kong/cloudfoundry"
-  version = "2.3.3"
+  version = "3.0.0"
 
   cf_org_name   = var.cf_org_name
   cf_space_name = var.cf_space_name
