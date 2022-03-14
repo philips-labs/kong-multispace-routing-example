@@ -38,14 +38,14 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_cloudfoundry"></a> [cloudfoundry](#provider\_cloudfoundry) | 0.15.0 |
-| <a name="provider_hsdp"></a> [hsdp](#provider\_hsdp) | 0.27.10 |
+| <a name="provider_hsdp"></a> [hsdp](#provider\_hsdp) | 0.30.10 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.1.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_kong"></a> [kong](#module\_kong) | philips-labs/kong/cloudfoundry | 2.3.3 |
+| <a name="module_kong"></a> [kong](#module\_kong) | philips-labs/kong/cloudfoundry | 3.0.0 |
 
 ## Resources
 
