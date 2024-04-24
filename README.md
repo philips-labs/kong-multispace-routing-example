@@ -5,6 +5,13 @@ available from a single host through a path prefix. It demonstrates
 how network policies can be used to accomodate traffic across 
 spaces and potentially even across org boundaries
 
+## Disclaimer
+
+> [!Important]
+> This repository is managed as Philips Inner-source / Open-source.
+> This repository is NOT endorsed or supported by HSSA&P or I&S Cloud Operations.
+> You are expected to self-support or raise tickets on the Github project and NOT raise tickets in HSP ServiceNow.
+
 ## how it works
 
 Based on the teams count (`var.teams`) the module does the following:
